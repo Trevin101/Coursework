@@ -46,6 +46,18 @@ public class Board extends JFrame{
         LevelCreator b = new LevelCreator("prev");
         MainPanel.add("East",LevelPanel.add(b.getButton()));
         
+        gameSetter();
+        	
+        MainPanel.add("Center",GamePanel);	
+        frame.setContentPane(MainPanel);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        }
+
+    
+    
+    public void gameSetter() {
         for (int i=0; i<5; i++) {
         	for (int j=0; j<5; j++) {
         		SquareType = SquareType*-1;
@@ -56,18 +68,7 @@ public class Board extends JFrame{
         		GamePanel.add(d.getButton());
         		SquareType = temp;
         	}
-        	
-        	
-        
-        
-        
-        MainPanel.add("Center",GamePanel);	
-        frame.setContentPane(MainPanel);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
         }
-
     }
 
 	private int TypeFinder(int xdisp, int ydisp, int min, int max,int original) {
